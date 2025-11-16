@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BlurryBlob from "@/components/animata/background/blurry-blob";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* Blurry Blob Background */}
+        <BlurryBlob 
+          firstBlobColor="bg-blue-600" 
+          secondBlobColor="bg-purple-600"
+        />
+        {/* Content wrapper */}
+        <div className="relative z-0">
+          {children}
+        </div>
       </body>
     </html>
   );
