@@ -7,7 +7,11 @@ import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import ExternalLinkButton from "@/components/animata/buttons/external-link-button";
 import IconButton from "@/components/animata/buttons/icon-button";
 
+import Link from "next/link";
+import { BrowserView, MobileView } from "react-device-detect";
+
 export default function Home() {
+  
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -55,9 +59,16 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center space-y-4">
-          <h1 className="text-6xl md:text-8xl font-bold text-white">
-            Elijah Hargreaves
-          </h1>
+          <BrowserView>
+            <h1 className="text-6xl md:text-8xl font-bold text-white">
+              Elijah Hargreaves
+            </h1>
+          </BrowserView>
+          <MobileView>
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white text-center leading-tight">
+              Elijah<br />Hargreaves
+            </h1>
+          </MobileView>
           <TypingText 
             text="Computer Engineer @ UCSB" 
             className="text-2xl md:text-3xl font-bespoke_bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-blue-300 to-blue-300"
