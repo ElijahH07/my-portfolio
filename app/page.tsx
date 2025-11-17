@@ -32,7 +32,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div 
-        className={`relative flex min-h-screen items-center justify-center font-sans overflow-hidden transition-opacity duration-1000 ${
+        className={`relative flex min-h-screen items-center justify-center overflow-hidden transition-opacity duration-1000 ${
           scrolled ? 'opacity-0' : 'opacity-100'
         }`}
       >
@@ -60,7 +60,7 @@ export default function Home() {
           </h1>
           <TypingText 
             text="Computer Engineer @ UCSB" 
-            className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-blue-300 to-blue-300"
+            className="text-2xl md:text-3xl font-bespoke_bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-blue-300 to-blue-300"
             grow={true}
             repeat={false}
             hideCursorOnComplete={true}
