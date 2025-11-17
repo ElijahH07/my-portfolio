@@ -66,7 +66,7 @@ export default function Home() {
           </BrowserView>
           <MobileView>
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white text-center leading-tight">
-              Elijah<br />Hargreaves
+              Elijah<br />Hargreaves <br />
             </h1>
           </MobileView>
           <TypingText 
