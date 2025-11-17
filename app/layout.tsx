@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Elijah Hargreaves | Computer Engineer",
   description: "Portfolio of Elijah Hargreaves — student at UCSB.",
+  icons: {
+    icon: "/icon.png", // or .png
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "Elijah Hargreaves | Computer Engineer @ UCSB",
     description:
