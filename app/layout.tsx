@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import BlurryBlob from "@/components/animata/background/blurry-blob";
 
 export const switzerBlack = localFont({
   src: "../public/fonts/Switzer-Black.woff2",
@@ -54,6 +55,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${switzerBlack.variable} ${switzerReg.variable} antialiased`}>
+      {/* Blurry Blob Background */}
+      <BlurryBlob 
+        firstBlobColor="bg-blue-600" 
+        secondBlobColor="bg-purple-600"
+      />
         {children}
       </body>
     </html>

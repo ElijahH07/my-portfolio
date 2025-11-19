@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import TypingText from '@/components/animata/text/typing-text';
-import BlurryBlob from "@/components/animata/background/blurry-blob";
+
 import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import ExternalLinkButton from "@/components/animata/buttons/external-link-button";
 import IconButton from "@/components/animata/buttons/icon-button";
@@ -32,15 +32,16 @@ export default function Home() {
 
   return (
     <>
-
-      {/* Blurry Blob Background */}
-      <BlurryBlob 
-        firstBlobColor="bg-blue-600" 
-        secondBlobColor="bg-purple-600"
-      />
       {/* Name Section */}
       <div className={`relative flex min-h-screen items-center justify-center overflow-hidden transition-opacity duration-1000 
       ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
+
+
+        <nav className="nav-bar font-switzer-reg">
+            <a href="/">Home</a>
+            <span className="separator">|</span>
+            <a href="/projects">Projects</a>
+        </nav>
 
         {/* Buttons in top right */}
         <div className="font-switzer-reg fixed top-6 right-6 z-50 flex items-center gap-3">
