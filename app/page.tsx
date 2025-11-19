@@ -6,8 +6,6 @@ import BlurryBlob from "@/components/animata/background/blurry-blob";
 import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import ExternalLinkButton from "@/components/animata/buttons/external-link-button";
 import IconButton from "@/components/animata/buttons/icon-button";
-
-import Link from "next/link";
 import { BrowserView, MobileView } from "react-device-detect";
 
 export default function Home() {
@@ -34,14 +32,18 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <div 
-        className={`relative flex min-h-screen items-center justify-center overflow-hidden transition-opacity duration-1000 ${
-          scrolled ? 'opacity-0' : 'opacity-100'
-        }`}
-      >
+
+      {/* Blurry Blob Background */}
+      <BlurryBlob 
+        firstBlobColor="bg-blue-600" 
+        secondBlobColor="bg-purple-600"
+      />
+      {/* Name Section */}
+      <div className={`relative flex min-h-screen items-center justify-center overflow-hidden transition-opacity duration-1000 
+      ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
+
         {/* Buttons in top right */}
-        <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
+        <div className="font-switzer-reg fixed top-6 right-6 z-50 flex items-center gap-3">
           <IconButton 
             icon={<Github size={24} />}
             href="https://github.com/ElijahH07"
@@ -60,18 +62,18 @@ export default function Home() {
 
         <div className="relative z-10 flex flex-col items-center space-y-4">
           <BrowserView>
-            <h1 className="text-6xl md:text-8xl font-bold text-white">
+            <h1 className="text-6xl md:text-8xl font-switzer-black text-white">
               Elijah Hargreaves
             </h1>
           </BrowserView>
           <MobileView>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white text-center leading-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-switzer-black text-white text-center leading-tight">
               Elijah<br />Hargreaves <br />
             </h1>
           </MobileView>
           <TypingText 
             text="Computer Engineer @ UCSB" 
-            className="text-2xl md:text-3xl font-bespoke_bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-blue-300 to-blue-300"
+            className="text-2xl md:text-3xl font-switzer-reg bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-blue-300 to-blue-300"
             grow={true}
             repeat={false}
             hideCursorOnComplete={true}
@@ -96,15 +98,26 @@ export default function Home() {
         }`}
       >
         <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-white mb-8">About Me</h2>
-          <p className="text-xl text-gray-300 leading-relaxed">
-            I am a freshman at UC Santa Barbara pursuing a degree in Computer Engineering 
-            and possibly a minor in Physics. I have a strong interest in computer systems 
-            technology, particularly in the design of operating systems and low level machine
-             code to help speed up computation in modern devices. I love programming and have 
-             personal experience designing full stack multi-platform apps.
+          <h2 className="text-5xl font-switzer-black text-white mb-8">About Me</h2>
+          <p className="text-xl text-gray-300 font-switzer-reg leading-relaxed">
+            Hello. My name is Elijah. I like eating waffles. But not the normal
+             kind with syrup. I like waffles with brown sugar and butter. I also 
+             like them with peanut butter, honey, and bananas. I think you can 
+             learn a lot from someone from how they eat their waffles. If they 
+             eat their waffles with nothing on it, they’re probably a serial killer 
+             and you should run. If they eat their waffles with syrup, they are 
+             probably boring to talk to. If they eat their waffles with syrup 
+             and butter they’re like a decent person I guess. But if they eat 
+             waffles like how I eat waffles, they’re obviously super cool. You 
+             know what I never understood. Cooking shows. Like how is some food 
+             objectively better than others? That literally makes no sense. I 
+             should make a cooking show that has toddlers who judge the food instead 
+             of “world renowned chefs”. That would be pretty funny actually. Actually 
+             I take it back, cooking shows are pretty entertaining though. I was 
+             really into this one korean cooking show on Netflix. <br /> <br />
+             Feel free to reach out to me at ehargreaves@ucsb.edu.
           </p>
-          <h2 className="text-5xl font-bold text-white mb-8 absolute -bottom-40" >Webpage still under construction</h2>
+          <h2 className="text-5xl font-switzer-black text-white mb-8 absolute -bottom-40" >Webpage still under construction</h2>
         </div>
       </div>
     </>

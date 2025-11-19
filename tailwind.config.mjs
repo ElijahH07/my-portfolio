@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config = {
   content: [
@@ -10,9 +9,6 @@ const config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        bespoke_bold: ['BespokeSans-Bold', 'sans-serif']
-      },
       keyframes: {
           "pop-blob": {
           "0%": { transform: "scale(1)" },

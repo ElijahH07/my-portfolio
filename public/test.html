@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<!-- Last Published: Wed Sep 22 2021 17:38:27 GMT+0000 (Coordinated Universal Time) -->
+<html>
+
+    <body>
+        <div class="css w-embed">
+            <link rel="stylesheet" href="/style.css">
+        </div>
+        <section class="section">
+            <div class="container">
+                <h1>Slider Title</h1>
+                <div class="slide_contain">
+                    <div class="slide_wrap w-dyn-list">
+                        <div role="list" class="slide_list w-dyn-items">
+                            <div role="listitem" class="slide_item w-dyn-item">
+                                <div style="background-color:#a4bfc3" class="slide_card">
+                                    <h1 class="card_title">
+                                        Advanced Transition Interactions in Webflow
+                                    </h1>
+                                </div>
+                            </div>
+                            <div role="listitem" class="slide_item w-dyn-item">
+                                <div style="background-color:#aae0bc" class="slide_card">
+                                    <h1 class="card_title">Gooey Card Interaction in Webflow</h1>
+                                </div>
+                            </div>
+                            <div role="listitem" class="slide_item w-dyn-item">
+                                <div style="background-color:#f2fe9a" class="slide_card">
+                                    <h1 class="card_title">Advanced Menu &amp; Slider Interactions in Webflow</h1>
+                                </div>
+                            </div>
+                            <div role="listitem" class="slide_item w-dyn-item">
+                                <div style="background-color:#a4bfc3" class="slide_card">
+                                    <h1 class="card_title">New Responsive Technique for Webflow: Introducing wizardry.</h1>
+                                </div>
+                            </div>
+                            <div role="listitem" class="slide_item w-dyn-item">
+                                <div style="background-color:#aae0bc" class="slide_card">
+                                    <h1 class="card_title">Top Five Interactions Designers Struggle to Create in Webflow</h1>
+                                </div>
+                            </div>
+                            <div role="listitem" class="slide_item w-dyn-item">
+                                <div style="background-color:#f2fe9a" class="slide_card">
+                                    <h1 class="card_title">Easy Letter Animations in Webflow</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_arrows">
+                        <a href="#" class="slide_arrow is--left is--disabled-arrow w-inline-block">
+                            <div class="slide_svg is--flip w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 12 12">
+                                    <g transform="translate(0, 0)">
+                                        <path d="M1,7H8.586L6.293,9.293a1,1,0,1,0,1.414,1.414l4-4a1,1,0,0,0,0-1.416l-4-4A1,1,0,0,0,6.293,2.707L8.586,5H1A1,1,0,0,0,1,7Z" fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="slide_arrow is--right w-inline-block">
+                            <div class="slide_svg w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 12 12">
+                                <g transform="translate(0, 0)">
+                                    <path d="M1,7H8.586L6.293,9.293a1,1,0,1,0,1.414,1.414l4-4a1,1,0,0,0,0-1.416l-4-4A1,1,0,0,0,6.293,2.707L8.586,5H1A1,1,0,0,0,1,7Z" fill="currentColor"></path>
+                                </g>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=614b10a7c1bbd32261dc8463" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() { 
+                // Set this to 0 for slides to directly overlap
+                let sliderOffset = 20;
+                // Tablet and Mobile Only
+                if (window.innerWidth < 992) {
+                    sliderOffset = 0;
+                }
+                // On page load
+                $(".slide_contain").each(function (index) {
+                $(this).find(".slide_item").first().addClass("is--current");
+                });
+                // On arrow click
+                $(".slide_arrow").on("click", function () {
+                // Set variables
+                let slideWidth = $(".slide_item").eq(0).outerWidth() - sliderOffset;
+                let slideParent = $(this).closest(".slide_contain");
+                let currentSlide = slideParent.find(".slide_item.is--current");
+                // Update current slide
+                slideParent.find(".is--current").removeClass("is--current");
+                if ($(this).hasClass("is--right")) {
+                    // Update current slide if right
+                    if (currentSlide.next().length) {
+                    currentSlide.next().addClass("is--current");
+                    } else {
+                    slideParent.find(".slide_item").eq(0).addClass("is--current");
+                    slideParent.find(".slide_arrow.is--right").addClass("is--disabled-arrow");
+                    }
+                } else {
+                    // Update current slide if left
+                    if (currentSlide.prev().length) {
+                    currentSlide.prev().addClass("is--current");
+                    } else {
+                    slideParent.find(".slide_item").eq(0).addClass("is--current");
+                    slideParent.find(".slide_arrow.is--left").addClass("is--disabled-arrow");
+                    }
+                }
+                // Update arrows
+                slideParent.find(".slide_arrow").removeClass("is--disabled-arrow");
+                if (
+                    slideParent.find(".slide_item.is--current").index() ==
+                    slideParent.find(".slide_item").first().index()
+                ) {
+                    slideParent.find(".slide_arrow.is--left").addClass("is--disabled-arrow");
+                }
+                if (
+                    slideParent.find(".slide_item.is--current").index() ==
+                    slideParent.find(".slide_item").last().index()
+                ) {
+                    slideParent.find(".slide_arrow.is--right").addClass("is--disabled-arrow");
+                }
+                // Figure out move distance
+                let currentNumber = slideParent.find(".slide_item.is--current").index();
+                let slideMove = slideWidth * currentNumber;
+                slideParent.find(".slide_item.is--current").addClass("is--animating");
+                $(".slide_item.is--animating ~ .slide_item, .slide_item.is--animating").css(
+                    "transform",
+                    `translateX(-${slideMove}px)`
+                );
+                slideParent.find(".slide_item.is--current").removeClass("is--animating");
+                });
+                // On window resize
+                $(window).resize(function () {
+                if (window.innerWidth > 767) {
+                    $(".slide_arrow.is--right").removeClass("is--disabled-arrow");
+                    $(".slide_arrow.is--left").addClass("is--disabled-arrow");
+                    $(".slide_item.is--current").removeClass("is--current");
+                    $(".slide_contain").find(".slide_item").first().addClass("is--current");
+                    $(".slide_item").css("transform", `translateX(0px)`);
+                }
+                });
+            });
+            
+        </script>
+    </body>
+</html>

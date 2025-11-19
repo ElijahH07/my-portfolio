@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import BlurryBlob from "@/components/animata/background/blurry-blob";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+export const switzerBlack = localFont({
+  src: "../public/fonts/Switzer-Black.woff2",
+  variable: "--font-switzer-black",
+  weight: '900',
+  display: 'swap',
+  style: 'normal'
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const switzerReg = localFont({
+  src: "../public/fonts/Switzer-Medium.woff2",
+  variable: "--font-switzer-reg",
+  weight: '300',
+  display: 'swap',
+  style: 'normal'
 });
 
 export const metadata: Metadata = {
   title: "Elijah Hargreaves | Computer Engineer",
   description: "Portfolio of Elijah Hargreaves — student at UCSB.",
-  icons: {
-    icon: "/icon.png", // or .png
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
   openGraph: {
     title: "Elijah Hargreaves | Computer Engineer @ UCSB",
     description:
@@ -46,7 +46,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,18 +53,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Blurry Blob Background */}
-        <BlurryBlob 
-          firstBlobColor="bg-blue-600" 
-          secondBlobColor="bg-purple-600"
-        />
-        {/* Content wrapper */}
-        <div className="relative z-0">
-          {children}
-        </div>
+      <body className={`${switzerBlack.variable} ${switzerReg.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
