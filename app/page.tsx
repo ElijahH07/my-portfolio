@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import TypingText from '@/components/animata/text/typing-text';
-
+import EmblaCarousel from '@/components/carousel/EmblaCarousel';
 import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import ExternalLinkButton from "@/components/animata/buttons/external-link-button";
 import IconButton from "@/components/animata/buttons/icon-button";
@@ -94,12 +94,12 @@ export default function Home() {
       {/* Next Section */}
       <div 
         id="next-section"
-        className={`min-h-screen bg-black flex items-center justify-center transition-opacity duration-1000 ${
+        className={`min-h-screen bg-black flex items-center justify-center w-full transition-opacity duration-1000 ${
           scrolled ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <h2 className="text-5xl font-switzer-black text-white mb-8">About Me</h2>
+        <div className="relative z-10 mx-auto px-6">
+          <h2 className="text-4xl font-switzer-black text-white mt-8 mb-8">About Me</h2>
           <p className="text-xl text-gray-300 font-switzer-reg leading-relaxed">
             Hello. My name is Elijah. I like eating waffles. But not the normal
              kind with syrup. I like waffles with brown sugar and butter. I also 
@@ -109,16 +109,12 @@ export default function Home() {
              and you should run. If they eat their waffles with syrup, they are 
              probably boring to talk to. If they eat their waffles with syrup 
              and butter they’re like a decent person I guess. But if they eat 
-             waffles like how I eat waffles, they’re obviously super cool. You 
-             know what I never understood. Cooking shows. Like how is some food 
-             objectively better than others? That literally makes no sense. I 
-             should make a cooking show that has toddlers who judge the food instead 
-             of “world renowned chefs”. That would be pretty funny actually. Actually 
-             I take it back, cooking shows are pretty entertaining though. I was 
-             really into this one korean cooking show on Netflix. <br /> <br />
+             waffles like how I eat waffles, they’re obviously super cool.  <br /> <br />
              Feel free to reach out to me at ehargreaves@ucsb.edu.
           </p>
-          <h2 className="text-5xl font-switzer-black text-white mb-8 absolute -bottom-40" >Webpage still under construction</h2>
+          <h2 className="text-4xl font-switzer-black text-white mt-8 mb-8">Skills:</h2>
+          <EmblaCarousel options={{loop: true}}>
+          </EmblaCarousel>
         </div>
       </div>
     </>
