@@ -1,12 +1,12 @@
 "use client"
 
-// app/page.js
-import CardSlider from '@/components/animata/background/card-slider';
+import EmblaCarousel from '@/components/carousel/EmblaCarousel';
 
 export default function Home() {
   return (
     <main>
-      <CardSlider />
+      <EmblaCarousel slides={[1, 2, 3, 4, 5, 6]} options={{loop: true}}>
+      </EmblaCarousel>
     </main>
   );
 }
