@@ -1,12 +1,14 @@
-"use client"
+'use client';
 
-import EmblaCarousel from '@/components/carousel/EmblaCarousel';
+import React from 'react';
+import { Github, Mail, Linkedin, Twitter, Heart } from 'lucide-react';
 
-export default function Home() {
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <main>
-      <EmblaCarousel options={{loop: true}}>
-      </EmblaCarousel>
-    </main>
+    <h1 className="text-white">testing stuff</h1>
   );
-}
+};
+
+export default Footer;

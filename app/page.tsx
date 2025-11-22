@@ -7,6 +7,7 @@ import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import ExternalLinkButton from "@/components/animata/buttons/external-link-button";
 import IconButton from "@/components/animata/buttons/icon-button";
 import { BrowserView, MobileView } from "react-device-detect";
+import Footer from "@/components/footer/footer"
 
 export default function Home() {
   
@@ -36,11 +37,17 @@ export default function Home() {
       <div className={`relative flex min-h-screen items-center justify-center overflow-hidden transition-opacity duration-1000 ${scrolled ? 'opacity-0' : 'opacity-100'}`}>
 
         {/* nav section */}
-        <nav className="nav-bar font-switzer-reg">
-            <a href="/">Home</a>
-            <span className="separator">|</span>
-            <a href="/projects">Projects</a>
-        </nav>
+        <BrowserView>
+          <nav className="nav-bar font-switzer-reg">
+              <a href="/">Home</a>
+              <span className="separator">|</span>
+              <a href="/projects">Projects</a>
+          </nav>
+        </BrowserView>
+
+        <MobileView>
+          {/* Need to think of a solution here */}
+        </MobileView>
 
         {/* Buttons in top right */}
         <div className="font-switzer-reg fixed top-6 right-6 z-50 flex items-center gap-3">
@@ -108,7 +115,7 @@ export default function Home() {
           scrolled ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <div className="relative z-10 mx-auto max-w-5xl px-6">
+        <div className="relative z-10 mx-auto  px-6">
           <h2 className="text-4xl font-switzer-black text-white mb-4 mt-4">About Me</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mb-8"></div>
           <p className="text-xl text-gray-300 font-switzer-reg leading-relaxed ">
@@ -134,6 +141,8 @@ export default function Home() {
 
           <EmblaCarousel options={{loop: true}}>
           </EmblaCarousel>
+
+          <Footer onAboutClick={scrollToNextSection}></Footer>
         </div>
       </div>
     </>
