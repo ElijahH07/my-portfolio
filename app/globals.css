@@ -217,4 +217,8 @@ body {
   }
 }
 
+.section-divider {
+    background: linear-gradient(90deg, transparent, rgba(147, 197, 253, 0.3), transparent);
+    height: 1px;
+}
 
